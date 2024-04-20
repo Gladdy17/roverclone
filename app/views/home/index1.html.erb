@@ -1,0 +1,77 @@
+<div class="container">
+  <div class="row">
+      <div class="col-4">
+          <form action="#" method="post" id="Submit">  
+              <fieldset>
+                <legend>Service Type</legend>
+                  <input type="radio" name="sign" id="aquarius" value="aquarius">
+                  <label for="aquarius">Boarding In Sitters Home</label>
+                  <input type="radio" name="sign" id="pisces" value="pisces">
+                  <label for="pisces">Hosuse Sitting</label>
+                  <input type="radio" name="sign" id="gemini" value="gemini">
+                  <label for="gemini">Drop in Visits </label>
+              </fieldset>
+              </br>
+              <div>
+                <label for="dob">Drop Off</label>
+                  <input type="date" name="dob" id="dob">
+                  <label for="edod">Pick up</label>
+                  <input type="date" name="edod" id="edod">
+              </div>
+              </br>
+              <div>
+                <input type="checkbox" id="terms" name="terms">
+                <label for="terms">Dog</label>
+                <input type="checkbox" id="terms" name="terms">
+                <label for="terms">Cat</label>
+              </div>
+              </br>
+              <div>
+                <label for="costmaxmin">Rate per night! $1 to $250</label>
+                <input type="range" name="costmaxmin" id="costmaxmin" min="10" max="250" step="5">
+              </div>
+              </br>
+              <fieldset>
+                <legend>Housing Features</legend>
+                <div>
+                  <input type="checkbox" id="scales" name="scales" />
+                  <label for="scales">Has House (excludes Apartment)</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="horns" name="yard" />
+                  <label for="horns">Has Fenced yard </label>
+                </div>
+              </fieldset>
+              </br>
+              <fieldset>
+                <legend>Pets at home</legend>
+                <div>
+                  <input type="checkbox" id="scales" name="scales" />
+                  <label for="scales">Doesn't own a dog</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="horns" name="yard" />
+                  <label for="horns">Doesn't own a cat</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="horns" name="yard" />
+                  <label for="horns">Accepts Only one client at a time </label>
+                </div>
+                <div>
+                  <input type="checkbox" id="horns" name="yard" />
+                  <label for="horns">Accepts non neutered male dogs</label>
+                </div>
+              </fieldset>
+              </br>
+              <input type="submit" name="submit" id="submit" value="Submit">
+          </form>
+      </div>
+      <div class="col-4"> 
+        <h2>Hello World Placeholder</h2>
+      </div>   
+      <div class="col-4">
+          <%= js_map [{latitude: 37.7829, longitude: -122.4190}] %>
+      </div>
+  </div>    
+  
+</div>

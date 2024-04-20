@@ -1,0 +1,33 @@
+<%= form_with model: @member do |form|%>
+
+    <div>
+        <%= form.label :name%>
+        <%= form.text_field :name %>
+    </div>
+    <div>
+        <%= form.label :email %>
+        <%= form.email_field :email %>
+    </div>
+    <div>
+        <%= form.label :date_of_birth%>
+        <%= form.date_field :date_of_birth%>
+    </div>
+    <div>
+        <%= form.label :bio%>
+        <%= form.text_area :bio%>
+    </div>
+    <div>
+        <%= form.label :Reference %>
+        <%= form.text_field :reference%>
+    </div>
+    <div>
+        <%= form.label :Address%>
+        <%= form.text_field :address%> 
+    </div>
+    <div>
+        <%= form.label :PostCode%>
+        <%= form.text_field :postcode %>
+    </div>                    
+  <%= form.button%>
+
+<% end %>
