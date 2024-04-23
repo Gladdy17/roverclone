@@ -3,3 +3,6 @@ import "@hotwired/turbo-rails"
 import "controllers"
 import * as bootstrap from "bootstrap"
 import "mapkick/bundle"
+
+import "trix"
+import "@rails/actiontext"

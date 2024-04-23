@@ -10,12 +10,17 @@ class MembersController < ApplicationController
 
   def create
     @member = Member.new(member_params)
+      if @member.save
+        redirect_to @member
+      else
+         render :new, status: :unprocessable_entity
+      end
   end
 
 
   private
 
   def member_params
-    params.require(:member).permit(:name, :email, :date_of_birth, :bio, :reference, :address)
+    params.require(:member).permit(:name, :email, :date_of_birth, :content, :reference, :address)
   end
 end
