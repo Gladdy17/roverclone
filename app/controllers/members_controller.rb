@@ -9,7 +9,6 @@ class MembersController < ApplicationController
   end
 
   def show
-    @member = Member.find(params[:id])
 
   end
 
@@ -34,8 +33,12 @@ class MembersController < ApplicationController
   end
 
   def destroy
-    @member.destroy
-    redirect_to root_path
+    @member = Member.find(params[:id])
+    if @member.destroy
+      redirect_to root_path, notice: "Member was successfully deleted."
+    else
+      redirect_to root_path, alert: "Unable to find member."
+    end
   end
 
   private

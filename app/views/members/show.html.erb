@@ -1,5 +1,9 @@
+<div class="container">
+
 <h1>Show Memeber Details</h1>
 
 <%= render partial: "form", locals: {member: @member}%>
 
-<%= button_to "Delete", @member, metthod: :delete, data: {turbo_confrm: "Are You Sure?"} %>
+<%= button_to "Delete", @member, method: :delete, data: {turbo_confrm: "Are You Sure?"} %>
+
+</div>
