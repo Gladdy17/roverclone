@@ -1,0 +1,69 @@
+<div style="position: relative; display: flex; justify-content: center; align-items: center; text-align: center;">
+  <%= image_tag "allimg/small.jpg", width: "auto", height: "auto", style: "max-width: 100%; height: auto;" %>
+  <div style="position: absolute; top: 15%; left: 0; width: 100%; height: 100%;">
+    <%= form_with(model: @home, url: homes_path, method: "post", style: "color: black;") do |f| %>
+      <fieldset>
+        <legend><h2>Service</h2></legend>
+        <%= f.radio_button :service, :homesitting, id: "homesitting" %>
+        <%= f.label :homesitting, "Boarding In Sitters Home" %>
+        <%= f.radio_button :service, :housesitting, id: "housesitting" %>
+        <%= f.label :housesitting, "House Sitting" %>
+        <%= f.radio_button :service, :dvisits, id: "dvisits" %>
+        <%= f.label :dvisits, "Drop in Visits" %>
+      </fieldset>
+      <br>
+      <div>
+        <%= f.label :dob, "Drop Off" %>
+        <%= f.date_field :dob %>
+        <%= f.label :edod, "Pick up" %>
+        <%= f.date_field :edod %>
+      </div>
+      <br>
+      <div>
+        <%= f.check_box :animal_types, { multiple: true }, "dog" %>
+        <%= f.label :dog, "Dog" %>
+        <%= f.check_box :animal_types, { multiple: true }, "cat" %>
+        <%= f.label :cat, "Cat" %>
+      </div>
+      <br>
+      <div>
+        <%= f.label :costmaxmin, "Rate per night! $1 to $250" %>
+        <%= f.range_field :costmaxmin, min: 1, max: 250, step: 1 %>
+      </div>
+      <br>
+      <fieldset>
+        <legend>Housing Features</legend>
+        <div>
+          <%= f.check_box :housing_features, { multiple: true }, "scales" %>
+          <%= f.label :scales, "Has House (excludes Apartment)" %>
+        </div>
+        <div>
+          <%= f.check_box :housing_features, { multiple: true }, "yard" %>
+          <%= f.label :yard, "Has Fenced yard" %>
+        </div>
+      </fieldset>
+      <br>
+      <fieldset>
+        <legend>Pets at home</legend>
+        <div>
+          <%= f.check_box :pets_at_home, { multiple: true }, "no_dog" %>
+          <%= f.label :no_dog, "Doesn't own a dog" %>
+        </div>
+        <div>
+          <%= f.check_box :pets_at_home, { multiple: true }, "no_cat" %>
+          <%= f.label :no_cat, "Doesn't own a cat" %>
+        </div>
+        <div>
+          <%= f.check_box :pets_at_home, { multiple: true }, "one_client" %>
+          <%= f.label :one_client, "Accepts Only one client at a time" %>
+        </div>
+        <div>
+          <%= f.check_box :pets_at_home, { multiple: true }, "non_neutered_dogs" %>
+          <%= f.label :non_neutered_dogs, "Accepts non neutered male dogs" %>
+        </div>
+      </fieldset>
+      <br>
+      <%= f.submit "Submit" %>
+    <% end %>
+  </div>
+</div>
