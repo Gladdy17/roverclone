@@ -16,9 +16,9 @@ class HomesController < ApplicationController
   def create
     @home = Home.new(home_params)
       if @home.save
-        redirect_to homes_path , notice: "Message sent successfully!"
+        redirect_to @home, notice: "Message sent successfully!"
       else
-        render :show
+        render :new
       end
   end
 
@@ -38,7 +38,7 @@ class HomesController < ApplicationController
 
   private
   def home_params
-    params.require(:home).permit(:homesitting, :housesitting, :dvisits, :dob, :edod, :dog, :cat, :costmaxmin, :scales, :yard, :no-dog, :no-cat, :one-client, :non-neutered-dogs)
+    params.require(:home).permit(:homesitting, :housesitting, :dvisits, :dob, :edod, :dogs, :cat, :costmaxmin, :scales, :yard, :no_dog, :no_cat, :one_client, :non_neutered_dogs)
 
   end
 
